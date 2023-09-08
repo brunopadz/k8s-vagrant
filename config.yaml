@@ -1,0 +1,24 @@
+cluster_name: lab-cluster
+network:
+  control_ip: 192.168.20.10
+  dns_servers:
+    - 1.1.1.1
+    - 1.0.0.1
+  pod_cidr: 172.16.1.0/16
+  service_cidr: 172.17.1.0/18
+nodes:
+  control:
+    cpu: 1
+    memory: 4096
+  workers:
+    count: 3
+    cpu: 2
+    memory: 2048
+software:
+  box: bento/ubuntu-22.04
+  calico: 3.26.1
+  containerd: 1.7.5
+  cni: 1.3.0
+  runc: 1.1.9
+  kubernetes: 1.28.1-00
+  metrics_server: 0.6.4
